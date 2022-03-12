@@ -1,2 +1,2 @@
-# The-Blockchain-Doesn-t-Lie
+# The Blockchain Doesn't Lie
 Repozizorij za tekmovanje BEST - nChain
