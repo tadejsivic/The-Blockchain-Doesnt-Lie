@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="crossword_style.css">
     <link rel="stylesheet" href="trophies.css">
     <script src="trophy_script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
 
 <body onload="main()">
     <div class="side-bar">
         <div id="logo"><img id="logo-icon" src="icons/logo.png"></div>
-        <button id="daily" onclick="document.location='daily.html'"><img id="sun-icon" src="icons/sun.png"></button>
+        <button id="daily" onclick="document.location='glava'"><img id="sun-icon" src="icons/sun.png"></button>
         <button id="trophies"><img id="trophy-icon" src="icons/trophy.png"></button>
-        <button id="logout"><img id="exit-icon" src="icons/exit.png"></button>
+        <button id="logout"><img id="exit-icon" onclick="document.location='/'" src="icons/exit.png"></button>
     </div>
     
     <div id="title"><h1><b>DOSEŽKI</b></h1></div>

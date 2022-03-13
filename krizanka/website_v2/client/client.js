@@ -10,7 +10,9 @@ function register(){
   })
   .then(function (response) {
     console.log(response.data);
-    if(response.data);
+    if(response.data){
+      window.location.assign("/glava");
+    }
     else window.alert("Uporabniško ime je že v uporabi!");
   })
   .catch(function (error) {

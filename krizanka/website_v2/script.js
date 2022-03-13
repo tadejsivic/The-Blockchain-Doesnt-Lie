@@ -14,7 +14,7 @@ let s;
 function main() {
     if (getCookie("crossword") != "") {
         crossword = JSON.parse(getCookie("crossword")).crossword;
-        console.log(crossword);
+        
     }
     else init();
     initTimer();
@@ -130,49 +130,38 @@ function getData() {
             ]
     }
    `;
-   /*
-   axios.get('/user',)
-  .then(function (response) {
-    return response;
-  })
-
-   */
 
 }
-
 function sendSolution() {
-    let solution = `{"crossword":`;
-    solution += JSON.stringify(crossword);
-    solution += `}`;
-    console.log(solution);
-    // send solution to server
+    
+    let solution = (crossword);
 
-    if ( true ){ // sendCheck(solution) == "true"
-        // PRAVILNO, ZMAGA, blockchain magic
-        console.log("ZMAGA");
-        setCookie("isFinished", true, 1);
-        var inputs=document.getElementsByTagName('input');
-        for(i=0;i<inputs.length;i++){
-            inputs[i].disabled=true;
-        }  
-        let win = document.getElementById("victory_popup");
-        win.style.zIndex="1";
-        win.style.display="block";
-        win.innerHTML += '<h1 style="position:absolute; top:5%; left:35%; font-size:250%">ČESTIKE!!!</h1>';
-        // Preveri, če je izmed top 10
-        if (false){
-            win.innerHTML += `<p>STE ${place} NAJHITREJŠI, KI STE REŠILI KRIŽANKO.</p>`;
+    console.log(solution);
+    axios.post("/solution", solution).then(function (response) {
+        console.log(response.data);
+        if ( response.data ){ 
+            // PRAVILNO, ZMAGA, blockchain magic
+            
+            setCookie("isFinished", true, 1);
+            var inputs=document.getElementsByTagName('input');
+            for(i=0;i<inputs.length;i++){
+                inputs[i].disabled=true;
+            }  
+            window.alert("ČESTITKE!\nZMAGALI STE");
+    
         }else{
-            win.innerHTML += `<p style="position:absolute; top:30%; left:15%; font-size:200%;">USPEŠNO STE REŠILI KRIŽANKO.</p>`;
+            window.alert("Napačno");
+    
         }
 
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 
+    
 
-
-    }else{
-        //NAPAČNO
-
-    }
+   
     
 
 }
