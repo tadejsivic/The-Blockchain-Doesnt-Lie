@@ -1,5 +1,8 @@
 # The-Blockchain-Doesnt-Lie
 Repozizorij za tekmovanje BEST - nChain
+Za testiranje programa se prijavite na tukaj:
+
+
 
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣴⣆⣠⣤⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣻⣿⣯⣘⠹⣧⣤⡀⠀⠀⠀⠀⠀
