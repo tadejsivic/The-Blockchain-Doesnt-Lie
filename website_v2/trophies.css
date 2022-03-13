@@ -30,7 +30,23 @@ body {
     position: absolute;
 }
 
+#winners_left{
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width:40%;
+    height: 100%;
+    
+}
 
+#winners_right{
+    position: absolute;
+    top: 0;
+    left: 60%;
+    width:40%;
+    height: 100%;
+
+}
 
 
 

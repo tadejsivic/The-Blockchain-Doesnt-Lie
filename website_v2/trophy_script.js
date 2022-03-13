@@ -81,12 +81,16 @@ function drawNFT(cross){
         let solved = document.getElementById("solved");
         solved.innerHTML = "Opravljeno dne 25.04.2022";
         let names = ["matija", "darko", "marko", "saša", "matej", "mitja", "anja", "špela", "lara", "nina"];
-        let levi = document.getElementById("winner_left");
-        let desni = document.getElementById("winner_right");
+        let levi = document.getElementById("winners_left");
+        let desni = document.getElementById("winners_right");
         for (let i=0; i<5; i++){
-            levi.innerHTML += '<p>'+names[i];
+            if (i<5){
+                levi.innerHTML += '<p>'+(i+1)+". "+names[i]+'</p>';
+            }else{
+                desni.innerHTML += '<p>'+(i+1)+". "+names[i]+'</p>';
+            }
         }
-
+        
 
 
         
