@@ -1,0 +1,45 @@
+body {
+    background-color: bisque;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#title h1{
+    font-size: 400%;
+    position: absolute;
+    left: 40%;
+}
+
+.content {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    top: 20%;
+    left: 10%;
+   
+}
+
+.result {
+    position: absolute;
+    width: 80%;
+    height: 10%;
+    left: 10%;
+    background-color: aquamarine;
+}
+
+#solved {
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

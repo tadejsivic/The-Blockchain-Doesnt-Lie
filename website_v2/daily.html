@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>nKrižanka</title>
+    <link rel="icon" type="image/x-icon" href="icons/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="menu_style.css">
+    <link rel="stylesheet" href="crossword_style.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body onload="main()">
+    <div class="side-bar">
+        <div id="logo"><img id="logo-icon" src="icons/logo.png"></div>
+        <button id="daily"><img id="sun-icon" src="icons/sun.png"></button>
+        <button id="trophies" onclick="document.location='trophies.html'"><img id="trophy-icon" src="icons/trophy.png"></button>
+        <button id="logout"><img id="exit-icon" src="icons/exit.png"></button>
+    </div>
+    <div class="crossword">
+        <div id="timer">00:00:00</div>
+        <button id="submit" onclick="sendSolution()">Preveri</button>
+        <div id="info"><img id="info-icon" src="icons/info.png"></div>
+        <div id="grid"></div>
+        <div id="zoom"></div>
+        <div id="popup">Pomoč: <br>Da povečate vprašanje, se z miško zapeljite čez.<br>
+            Za vpis črke, kliknite v kvadratek ter vtipkajte črko.<br>
+            Na koncu klinkite gumb "preveri".<br>
+            Srečno!
+        </div>
+    </div>
+</body>
+
+</html>

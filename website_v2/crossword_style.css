@@ -1,0 +1,134 @@
+
+body {
+    background-color: bisque;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.crossword {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    top: 0;
+    left: 10%;
+}
+
+#timer {
+    position: absolute;
+    font-size: xx-large;
+    top: 3%;
+    right: 27%;
+    margin-top: 15px;
+}
+
+#submit {
+    position: absolute;
+    width: 10%;
+    height: 5%;
+    top: 3%;
+    left: 10%;
+    font-size: xx-large;
+    display: inline-block;
+    background-color: lavender;
+    border-radius: 10%;
+    box-shadow: 3px 3px 0 0;
+    margin-top: 15px;
+}
+
+#info {
+    position: absolute;
+    width: auto;
+    height: 5%;
+    top: 55.5%;
+    right: 3%;
+    background-color: lightgoldenrodyellow;
+    border: none;
+    margin-top: 15px;
+    z-index: 1;
+}
+
+#info-icon {
+    width: 100%;
+    height: 100%;
+}
+
+#trophy-icon {
+    width: 70%;
+    height: 70%;
+}
+
+#grid {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 0;
+    top: 10%;
+    margin-left: 10%;
+}
+
+#grid div, input {
+    float: left;
+    width: 65px;
+    height: 65px;
+    border: 1px solid black;
+    padding:0;
+    background-color: white;
+    text-align: center;
+}
+
+#grid input {
+    text-transform:uppercase;
+    font-size: xx-large;
+}
+
+#grid input:focus {
+    background-color: lightgoldenrodyellow;
+}
+
+
+#grid #hint {
+    background-color: lightgray;
+    word-wrap: break-word;
+    font-size: smaller;
+}
+
+
+#grid #empty {
+    background-color: black;
+}
+
+p {
+    clear: left;
+}
+
+#zoom {
+    position: absolute;
+    top: 11.5%;
+    right: 2.5%;
+    width: 20%;
+    height: 40%;
+    border: 1px solid black;
+    border-radius: 3%;
+    background-color: lavender;
+    font-size: xx-large;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+#popup{
+    position: absolute;
+    top: 56.5%;
+    right: 2.5%;
+    width: 20%;
+    height: 40%;
+    border: 1px solid black;
+    border-radius: 3%;
+    background-color: lightgoldenrodyellow;
+    font-size: xx-large;
+    padding: 10px;
+    word-wrap: break-word;
+
+}
+
+
+
+

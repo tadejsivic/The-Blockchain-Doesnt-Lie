@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Moji Dosežki</title>
+    <link rel="icon" type="image/x-icon" href="icons/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="menu_style.css">
+    <link rel="stylesheet" href="crossword_style.css">
+    <link rel="stylesheet" href="trophies.css">
+    <script src="trophy_script.js"></script>
+
+</head>
+
+<body onload="main()">
+    <div class="side-bar">
+        <div id="logo"><img id="logo-icon" src="icons/logo.png"></div>
+        <button id="daily" onclick="document.location='daily.html'"><img id="sun-icon" src="icons/sun.png"></button>
+        <button id="trophies"><img id="trophy-icon" src="icons/trophy.png"></button>
+        <button id="logout"><img id="exit-icon" src="icons/exit.png"></button>
+    </div>
+    
+    <div id="title"><h1><b>MOJI DOSEŽKI</b></h1></div>
+    
+    <div class="content">
+       
+       
+       <div class="result">
+            <canvas id="canvas" width="200" height="100"></canvas>
+            <p id="solved"></p>
+            <div id="winners_left">
+                
+            </div>
+            <div id="winners_right">
+                
+            </div>
+       </div>
+
+       
+    </div>
+</body>
+
+</html>
