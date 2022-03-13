@@ -1,31 +1,3 @@
-function buttonDown(){
-    //console.log("test");
-    axios.get('http://localhost:3000/test').then(
-        (response) => {
-            let result = response.data;
-            console.log(result);
-        }
-    );
-
-    axios.get('/demo').then(
-        (response) => {
-            let result = response.data;
-            console.log(result);
-        }
-    );
-
-    axios.post('/auth', {
-        username: 'Fred',
-        password: 'Flintstone'
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-}
-
 function register(){
   console.log("Poteka registracija");
   let username = document.getElementById("upIme").value;
@@ -56,7 +28,9 @@ function login(){
     password: password
   })
   .then(function (response) {
-    if(response.data);
+    if(response.data){
+      window.location.assign("/glava");
+    }
     else window.alert("Vaše uporabniško ime in/ali geslo se ne ujemata!");
   })
   .catch(function (error) {
