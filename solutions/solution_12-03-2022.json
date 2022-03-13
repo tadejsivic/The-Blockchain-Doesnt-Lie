@@ -1,13 +1,18 @@
 {
     "solution":
-        [
-            [null, "Nadzorovati igro, tekmovanje", "F. Bevk: Peter ...", "Klic Občinstva", null, "Himalajski snežni človek", "Izvirnik", "Afriška država"],
-            ["Slovenska banka", "S", "K", "B", "Islandski pisatelj Svensson/Vegetirjanec (pog.)", "J", "O", "N"],
-            ["Srbska Igralka Markovič", "O", "L", "I", "V", "E", "R", "A"],
-            ["Kdor Molči, ... odogovori", "D", "E", "S", "E", "T", "I", "M"],
-            ["Irena Polanec/Napad na damo pri šahu (pog.)", "I", "P", "Ameriški muzikal/Slovenski kkolesar valjavec", "G", "I", "G", "I"],
-            ["Š", "T", "E", "T", "I", "Ida Baš", "I", "B"]
-        ]       
-
-        
+    [
+        [null,null,null,null,null,null,"GLAVNO MESTO KORZIKE","ŠPANSKI TENORIST (DVE BESEDI)","ŠESTI JUDOVSKI MESEC","NUŠA LESAR","DOLGOPRSTNEŽ","ITALIJANSKI PESNIK IN PAMFLETIST (PIETRO)",null,"PAVLIHA, ŠALJIVEC","FRANCOSKI IGRALEC DELON","SLAVKO IVANČIČ","OČAK TURČIJE","POMOTA"],
+        [null,null,null,null,null,"BUDISTIČNO JAMSKO SVETIŠČE V INDIJI","A$","J$","A$","N$","T$","A$","MOHAMEDOV VNUK","H$","A$","S$","A$","N$"],
+        [null,null,null,null,null,"PEVEC, KI JODLA","J$","O$","D$","L$","A$","R$","SLOVENSKI ROKER MEGLIČ/VEDENJE (ZASTARELO)","A$","L$","I$","R$","A$"],
+        [null,null,null,null,null,"STARO-JUDOVSKI KRALJ","A$","S$","A$","ALKALOID V OPIJU/TKANINA ZA PLENICE","T$","E$","T$","R$","A$","MADAGASKARSKA POLOPICA/ALEN PAJENK","A$","P$"],
+        [null,null,null,null,null,"NA STOLU UMRLI GEOGRAF IN JAMAR (JOSIP)","C$","E$","R$","K$","VEJA ZA GRAH/LUKA NA MADAGASKARJU","T$","O$","L$","I$","A$","R$","A$",""],
+        [null,null,null,null,null,"KRAJEVNO BOŽANSTVO MEMFISA/CLAUDIA CARDINALE","C$","C$","VZDEVEK BERTE BOJETU/IMENJAK","S$","O$","I$","M$","E$","N$","J$","A$","K$"],
+        [null,null,null,null,null,"P$","I$","A$","B$","A$","B$","N$","I$","K$","ZEMELJSKO OLJE/SEDMA GRŠKA ČRKA","E$","T$","A$"],
+        [null,"AMERIŠKI IGRALEC GOLFA (TIGER)","MODEL OPLOVEGA VOZILA","SLOVENSKI BIATLONEC FAK","ŽALOSTEN DOGODEK/KANADSKO VELEMESTO","T$","O$","R$","O$","N$","T$","O$","NEMŠKA PISATELJICA SEIDEL","I$","N$","A$","POTUJOČI PESNIK IN MUZIKANT V ZAHODNI AFRIKI","JAPONSKI FILMSKI REŽISER KUROSAVA"],
+        ["POLJSKI FILMSKI REŽISER (ANDRZEJ)","W$","A$","J$","D$","A$","SLOVENSKA PEVKA KEVC/ČEŠKI ŠAHIST (RICHARD)","R$","E$","T$","I$","EGIPČANSKI SVETI BIK","OSTANEK VINA V SODU (NAREČNO)","N$","A$","J$","G$","A$"],
+        ["PTICA UJEDA, SRŠENAR","O$","S$","A$","R$","LOPATA ZA METANJE PESKA","M$","E$","T$","A$","K$","A$","NAREČNI IZRAZ ZA KRAVICO","KOŽA KOZLIČEV/NAŠA SMUČARKA (MARUŠA)","F$","E$","R$","K$"],
+        ["PALICA ZA ČIŠČENJE PLUGA, RATKA","O$","T$","K$","A$","LOJZE LEBIČ/ARM. SKLADATELJ HAČATURJAN","A$","R$","A$","M$","NADJA AUERMANN/PREDNIK ŠKOTOV","P$","I$","K$","T$","TINE URNAUT/ION ILIESCU","I$","I$"],
+        ["USTNO LJUDSKO GLASBILO","D$","R$","O$","M$","L$","J$","A$","POBUDNIK, ZAČETNIK","I$","N$","I$","C$","I$","A$","T$","O$","R$"],
+        ["UMRLI AMERIŠKI FILMSKI IGRALEC (TELLY)","S$","A$","V$","A$","L$","A$","S$","PLANTAŽA","N$","A$","S$","A$","D$","VRTNA HIŠKA","U$","T$","A$"]
+    ]
 }

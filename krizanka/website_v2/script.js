@@ -12,9 +12,20 @@ let s;
 // =============== Initialization =============== //
 
 function main() {
-    init();
+    if (getCookie("crossword") != "") {
+        crossword = JSON.parse(getCookie("crossword")).crossword;
+        console.log(crossword);
+    }
+    else init();
     initTimer();
     drawGrid();
+    if (getCookie("isFinished") == "")setCookie("isFinished", false, 1);
+    else if (getCookie("isFinished")=="true"){
+        var inputs=document.getElementsByTagName('input');
+        for(i=0;i<inputs.length;i++){
+            inputs[i].disabled=true;
+        }  
+    }
 }
 
 function init() {
@@ -34,17 +45,15 @@ function drawGrid() {
 
             if (crossword[i][j] == null) line += "<div id=\"empty\"></div>";
             else if (crossword[i][j].length > 0) {
-                line += "<div id=\"hint\"";
-                
                 if (crossword[i][j].includes("/")) {
                     let hints = crossword[i][j].split("/");
-                    line += "><div id=\"hint\" onmouseover=\"displayHint(this)\" onmouseout=\"hideHint(this)\" style=\"height: 30px; border: 0; border-bottom: 2.5px solid black;\">" + hints[0] + "</div>";
-                    line += "<div id=\"hint\" onmouseover=\"displayHint(this)\" onmouseout=\"hideHint(this)\" style=\"height: 30px; top: 30px; border: 0;\">" + hints[1] + "</div>";
+                    line += "<div id=\"hint\"><div id=\"hint\" onmouseover=\"displayHint(this)\" onmouseout=\"hideHint(this)\" style=\"height: 30px; border: 0; border-bottom: 2.5px solid black;\">" + hints[1] + "</div>";
+                    line += "<div id=\"hint\" onmouseover=\"displayHint(this)\" onmouseout=\"hideHint(this)\" style=\"height: 30px; top: 30px; border: 0;\">" + hints[0] + "</div></div>";
                 }
                 else {
-                    line += " onmouseover=\"displayHint(this)\" onmouseout=\"hideHint(this)\">" + crossword[i][j];
+                    if (crossword[i][j].includes("$")) line += `<input onchange="update(this, ${i}, ${j})" maxlength="1" type="text" value="${crossword[i][j].charAt(0)}">`; 
+                    else line += "<div id=\"hint\" onmouseover=\"displayHint(this)\" onmouseout=\"hideHint(this)\">" + crossword[i][j] + "</div>";
                 }
-                line += "</div>";
             }else{
                 line += `<input onchange="update(this, ${i}, ${j})" maxlength="1" type="text">`;
             }
@@ -65,7 +74,11 @@ function hideHint(e){
 // =============== Logic ================ //
 
 function update(e, y, x) {
-    crossword[y][x] = e.value.toUpperCase();
+    crossword[y][x] = e.value.toUpperCase() + "$";
+    let solution = `{"crossword":`;
+    solution += JSON.stringify(crossword);
+    solution += `}`;
+    setCookie("crossword", solution, 1);
 }
 
 // ========= TIMER - DON'T LOOK ========= //
@@ -97,41 +110,25 @@ function updateTimer(){
 // =============== Server =============== //
 
 function getData() {
-   /*
     return `
-    {
+    { 
         "crossword":
             [
-                [null, "Nadzorovati igro, tekmovanje", "F. Bevk: Peter ...", "Klic Občinstva", null, "Himalajski snežni človek", "Izvirnik", "Afriška država"],
-                ["Slovenska banka", "", "", "", "Islandski pisatelj Svensson/Vegetirjanec (pog.)", "", "", ""],
-                ["Srbska Igralka Markovič", "", "", "", "", "", "", ""],
-                ["Kdor Molči, ... odogovori", "", "", "", "", "", "", ""],
-                ["Irena Polanec/Napad na damo pri šahu (pog.)", "", "", "Ameriški muzikal/Slovenski kkolesar valjavec", "", "", "", ""],
-                ["", "", "", "", "", "Ida Baš", "", ""]
-            ]       
-    
-    }
-    `;
-   */  
-   return `
-   { 
-        "crossword":
-            [
-                [null, null, null, null, "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "C"], 
-                [null, null, null, null,"", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
-                [null, null, null, null,"", "", "", "", "", "", "", "", "", "", "", "France Prešeren", "", ""], 
-                [null, null, null, null,"", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
-                ["X", "", "", "","", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
-                ["X", "", "", "","", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
-                ["X", "", "", "","", "", "ABC", "", "", "", "BOI", "", "", "", "", "", "", ""], 
-                ["X", "", "", "","", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
-                ["X", "", "", "","", "", "", "", "", "AVO", "", "", "", "", "", "", "", ""], 
-                ["X", "", "", "","", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
-                ["X", "", "", "","", "", "", "", "", "", "", "", "", "", "", "Tone Pavček/Miha Sivka", "", ""], 
-                ["X", "", "", "","", "", "", "", "", "", "", "", "", "", "", "", "", ""],  
-                ["X", "", "", "","", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+                [null, null, null, null, null, null, "GLAVNO MESTO KORZIKE", "ŠPANSKI TENORIST (DVE BESEDI)", "ŠESTI JUDOVSKI MESEC", "NUŠA LESAR", "DOLGOPRSTNEŽ", "ITALIJANSKI PESNIK IN PAMFLETIST (PIETRO)", null, "PAVLIHA, ŠALJIVEC", "FRANCOSKI IGRALEC DELON", "SLAVKO IVANČIČ", "OČAK TURČIJE", "POMOTA"], 
+                [null, null, null, null, null, "BUDISTIČNO JAMSKO SVETIŠČE V INDIJI", "", "", "", "", "", "", "MOHAMEDOV VNUK", "", "", "", "", ""], 
+                [null, null, null, null, null, "PEVEC, KI JODLA", "", "", "", "", "", "", "SLOVENSKI ROKER MEGLIČ/VEDENJE (ZASTARELO)", "", "", "", "", ""], 
+                [null, null, null, null, null, "STARO-JUDOVSKI KRALJ", "", "", "", "ALKALOID V OPIJU/TKANINA ZA PLENICE", "", "", "", "", "", "MADAGASKARSKA POLOPICA/ALEN PAJENK", "", ""], 
+                [null, null, null, null, null, "NA STOLU UMRLI GEOGRAF IN JAMAR (JOSIP)", "", "", "", "", "VEJA ZA GRAH/LUKA NA MADAGASKARJU", "", "", "", "", "", "", "", ""], 
+                [null, null, null, null, null, "KRAJEVNO BOŽANSTVO MEMFISA/CLAUDIA CARDINALE", "", "", "VZDEVEK BERTE BOJETU/IMENJAK", "", "", "", "", "", "", "", "", ""], 
+                [null, null, null, null, null, "", "", "", "", "", "", "", "", "", "ZEMELJSKO OLJE/SEDMA GRŠKA ČRKA", "", "", ""], 
+                [null, "AMERIŠKI IGRALEC GOLFA (TIGER)", "MODEL OPLOVEGA VOZILA", "SLOVENSKI BIATLONEC FAK", "ŽALOSTEN DOGODEK/KANADSKO VELEMESTO", "", "", "", "", "", "", "", "NEMŠKA PISATELJICA SEIDEL", "", "", "", "POTUJOČI PESNIK IN MUZIKANT V ZAHODNI AFRIKI", "JAPONSKI FILMSKI REŽISER KUROSAVA"], 
+                ["POLJSKI FILMSKI REŽISER (ANDRZEJ)", "", "", "", "", "", "SLOVENSKA PEVKA KEVC/ČEŠKI ŠAHIST (RICHARD)", "", "", "", "", "EGIPČANSKI SVETI BIK", "OSTANEK VINA V SODU (NAREČNO)", "", "", "", "", ""], 
+                ["PTICA UJEDA, SRŠENAR", "", "", "", "", "LOPATA ZA METANJE PESKA", "", "", "", "", "", "", "NAREČNI IZRAZ ZA KRAVICO", "KOŽA KOZLIČEV/NAŠA SMUČARKA (MARUŠA)", "", "", "", ""], 
+                ["PALICA ZA ČIŠČENJE PLUGA, RATKA", "", "", "", "", "LOJZE LEBIČ/ARM. SKLADATELJ HAČATURJAN", "", "", "", "", "NADJA AUERMANN/PREDNIK ŠKOTOV", "", "", "", "", "TINE URNAUT/ION ILIESCU", "", ""], 
+                ["USTNO LJUDSKO GLASBILO", "", "", "", "", "", "", "", "POBUDNIK, ZAČETNIK", "", "", "", "", "", "", "", "", ""],  
+                ["UMRLI AMERIŠKI FILMSKI IGRALEC (TELLY)", "", "", "", "", "", "", "", "PLANTAŽA", "", "", "", "", "", "VRTNA HIŠKA", "", "", ""]
             ]
-   }
+    }
    `;
    /*
    axios.get('/user',)
@@ -150,9 +147,28 @@ function sendSolution() {
     console.log(solution);
     // send solution to server
 
-    if ( sendCheck(solution) ){
+    if ( true ){ // sendCheck(solution) == "true"
         // PRAVILNO, ZMAGA, blockchain magic
         console.log("ZMAGA");
+        setCookie("isFinished", true, 1);
+        var inputs=document.getElementsByTagName('input');
+        for(i=0;i<inputs.length;i++){
+            inputs[i].disabled=true;
+        }  
+        let win = document.getElementById("victory_popup");
+        win.style.zIndex="1";
+        win.style.display="block";
+        win.innerHTML += '<h1 style="position:absolute; top:5%; left:35%; font-size:250%">ČESTIKE!!!</h1>';
+        // Preveri, če je izmed top 10
+        if (false){
+            win.innerHTML += `<p>STE ${place} NAJHITREJŠI, KI STE REŠILI KRIŽANKO.</p>`;
+        }else{
+            win.innerHTML += `<p style="position:absolute; top:30%; left:15%; font-size:200%;">USPEŠNO STE REŠILI KRIŽANKO.</p>`;
+        }
+
+
+
+
     }else{
         //NAPAČNO
 
@@ -172,7 +188,30 @@ function sendCheck(solution){
     
 }
 
+// ====================== Cookies ====================== //
 
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
 
 
 

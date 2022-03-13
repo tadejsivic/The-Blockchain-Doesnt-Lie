@@ -1,12 +1,18 @@
-{
+{ 
     "crossword":
         [
-            [null, "Nadzorovati igro, tekmovanje", "F. Bevk: Peter ...", "Klic Občinstva", null, "Himalajski snežni človek", "Izvirnik", "Afriška država"],
-            ["Slovenska banka", "", "", "", "Islandski pisatelj Svensson/Vegetirjanec (pog.)", "", "", ""],
-            ["Srbska Igralka Markovič", "", "", "", "", "", "", ""],
-            ["Kdor Molči, ... odogovori", "", "", "", "", "", "", ""],
-            ["Irena Polanec/Napad na damo pri šahu (pog.)", "", "", "Ameriški muzikal/Slovenski kkolesar valjavec", "", "", "", ""],
-            ["", "", "", "", "", "Ida Baš", "", ""]
-        ]       
-
+            [null, null, null, null, null, null, "GLAVNO MESTO KORZIKE", "ŠPANSKI TENORIST (DVE BESEDI)", "ŠESTI JUDOVSKI MESEC", "NUŠA LESAR", "DOLGOPRSTNEŽ", "ITALIJANSKI PESNIK IN PAMFLETIST (PIETRO)", null, "PAVLIHA, ŠALJIVEC", "FRANCOSKI IGRALEC DELON", "SLAVKO IVANČIČ", "OČAK TURČIJE", "POMOTA"], 
+            [null, null, null, null, null, "BUDISTIČNO JAMSKO SVETIŠČE V INDIJI", "", "", "", "", "", "", "MOHAMEDOV VNUK", "", "", "", "", ""], 
+            [null, null, null, null, null, "PEVEC, KI JODLA", "", "", "", "", "", "", "SLOVENSKI ROKER MEGLIČ/VEDENJE (ZASTARELO)", "", "", "", "", ""], 
+            [null, null, null, null, null, "STARO-JUDOVSKI KRALJ", "", "", "", "ALKALOID V OPIJU/TKANINA ZA PLENICE", "", "", "", "", "", "MADAGASKARSKA POLOPICA/ALEN PAJENK", "", ""], 
+            [null, null, null, null, null, "NA STOLU UMRLI GEOGRAF IN JAMAR (JOSIP)", "", "", "", "", "VEJA ZA GRAH/LUKA NA MADAGASKARJU", "", "", "", "", "", "", "", ""], 
+            [null, null, null, null, null, "KRAJEVNO BOŽANSTVO MEMFISA/CLAUDIA CARDINALE", "", "", "VZDEVEK BERTE BOJETU/IMENJAK", "", "", "", "", "", "", "", "", ""], 
+            [null, null, null, null, null, "", "", "", "", "", "", "", "", "", "ZEMELJSKO OLJE/SEDMA GRŠKA ČRKA", "", "", ""], 
+            [null, "AMERIŠKI IGRALEC GOLFA (TIGER)", "MODEL OPLOVEGA VOZILA", "SLOVENSKI BIATLONEC FAK", "ŽALOSTEN DOGODEK/KANADSKO VELEMESTO", "", "", "", "", "", "", "", "NEMŠKA PISATELJICA SEIDEL", "", "", "", "POTUJOČI PESNIK IN MUZIKANT V ZAHODNI AFRIKI", "JAPONSKI FILMSKI REŽISER KUROSAVA"], 
+            ["POLJSKI FILMSKI REŽISER (ANDRZEJ)", "", "", "", "", "", "SLOVENSKA PEVKA KEVC/ČEŠKI ŠAHIST (RICHARD)", "", "", "", "", "EGIPČANSKI SVETI BIK", "OSTANEK VINA V SODU (NAREČNO)", "", "", "", "", ""], 
+            ["PTICA UJEDA, SRŠENAR", "", "", "", "", "LOPATA ZA METANJE PESKA", "", "", "", "", "", "", "NAREČNI IZRAZ ZA KRAVICO", "KOŽA KOZLIČEV/NAŠA SMUČARKA (MARUŠA)", "", "", "", ""], 
+            ["PALICA ZA ČIŠČENJE PLUGA, RATKA", "", "", "", "", "LOJZE LEBIČ/ARM. SKLADATELJ HAČATURJAN", "", "", "", "", "NADJA AUERMANN/PREDNIK ŠKOTOV", "", "", "", "", "TINE URNAUT/ION ILIESCU", "", ""], 
+            ["USTNO LJUDSKO GLASBILO", "", "", "", "", "", "", "", "POBUDNIK, ZAČETNIK", "", "", "", "", "", "", "", "", ""],  
+            ["UMRLI AMERIŠKI FILMSKI IGRALEC (TELLY)", "", "", "", "", "", "", "", "PLANTAŽA", "", "", "", "", "", "VRTNA HIŠKA", "", "", ""]
+        ]
 }
