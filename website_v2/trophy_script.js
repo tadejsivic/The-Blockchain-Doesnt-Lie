@@ -83,7 +83,7 @@ function drawNFT(cross){
         let names = ["matija", "darko", "marko", "saša", "matej", "mitja", "anja", "špela", "lara", "nina"];
         let levi = document.getElementById("winners_left");
         let desni = document.getElementById("winners_right");
-        for (let i=0; i<5; i++){
+        for (let i=0; i<10; i++){
             if (i<5){
                 levi.innerHTML += '<p>'+(i+1)+". "+names[i]+'</p>';
             }else{
